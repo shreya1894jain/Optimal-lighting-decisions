@@ -1,0 +1,270 @@
+body {
+  font: 13px tahoma;
+  color: #7f8c8d;
+  font-weight: normal;
+}
+
+
+
+.numberbox {
+    border: 1px solid #c4c4c4;
+    height: 25px;
+    width: 275px;
+    font-size: 13px;
+    padding: 4px 4px 4px 4px;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    box-shadow: 0px 0px 8px #d9d9d9;
+    -moz-box-shadow: 0px 0px 8px #d9d9d9;
+    -webkit-box-shadow: 0px 0px 8px #d9d9d9;
+}
+
+.numberbox:focus {
+    outline: none;
+    border: 1px solid #7bc1f7;
+    box-shadow: 0px 0px 8px #7bc1f7;
+    -moz-box-shadow: 0px 0px 8px #7bc1f7;
+    -webkit-box-shadow: 0px 0px 8px #7bc1f7;
+}
+
+label > input{
+    visibility: hidden;
+    position: absolute;
+}
+label > input + img{
+    cursor:pointer;
+}
+
+.submitcss {
+    -webkit-box-shadow:rgba(0,0,0,0.2) 0 1px 0 0;
+    -moz-box-shadow:rgba(0,0,0,0.2) 0 1px 0 0;
+    box-shadow:rgba(0,0,0,0.2) 0 1px 0 0;
+    border-bottom-color:#333;
+    border:1px solid #1f1f1f;
+    background-color: rgba(158, 164, 159, 0.54);
+    border-radius:5px;
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    color: #767676;
+    font-family:'Verdana',Arial,sans-serif;
+    font-size:14px;
+    text-shadow: #999e9a 0 1px 0;
+    padding:5px
+}
+
+#energy_p,  #cost_p, #environment_p, #custom_p  {
+    opacity: 0.2;
+}
+
+
+#energy_p:hover, #cost_p:hover, #environment_p:hover, #custom_p:hover   {
+    opacity: 1.0;
+}
+
+
+label.environment1 > input:checked + #environment_p {
+    opacity: 1.0;
+
+}
+
+label.cost1 > input:checked + #cost_p  {
+    opacity: 1.0;
+
+}
+
+label.energy1 > input:checked + #energy_p {
+    opacity: 1.0;
+
+}
+
+label.custom1 > input:checked + #custom_p {
+    opacity: 1.0;
+
+}
+/*
+.ledg,  .incg, .cflg {
+    opacity: 0.2;
+}
+*/
+label.ledg1 > input:checked + img{
+    content: url('images/led.png');
+     opacity: 1.0;
+
+}
+
+label.incg1 > input:checked + img{
+    content: url('images/inc.png');
+     opacity: 1.0;
+
+}
+
+label.cflg1 > input:checked + img{
+    content: url('images/cfl.png');
+     opacity: 1.0;
+
+}
+
+#incg:hover {
+    content: url('images/inc.png');
+}
+
+#cflg:hover {
+    content: url('images/cfl.png');
+}
+
+#ledg:hover {
+    content: url('images/led.png');
+}
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke: black;
+    shape-rendering: crispEdges;
+}
+.axis text {
+    font: 11px sans-serif;
+}
+.row {
+    width: 100%;
+    text-align: center;
+}
+
+.block {
+    width: 100px;
+    display: inline-block;
+}
+
+
+#slider { 
+	margin: 10px;
+	align: center; }
+
+.left {
+    width: 30%;
+    float: left;
+    text-align: right;
+}
+.right {
+    width: 65%;
+    margin-left: 10px;
+    float:left;
+}
+
+
+
+.grid-background {
+  fill: #ddd;
+}
+
+.grid line,
+.grid path {
+  fill: none;
+  stroke: #fff;
+  shape-rendering: crispEdges;
+}
+
+.grid .minor.tick line {
+  stroke-opacity: .5;
+}
+
+.brush .extent {
+  stroke: #000;
+  fill-opacity: .125;
+  shape-rendering: crispEdges;
+}
+
+.filter{
+  clear:left;
+  height:25px;
+  margin: 20px;
+}
+
+#test .arc2 {
+    stroke-weight:0.1;
+    fill: #3660b0;
+}
+
+#outer {
+    background:#FFFFFF;
+    border-radius: 5px;
+    color: #000;
+}
+
+#div1, #div2, #div3{
+    width: 33%;
+    height: 200px;
+    box-sizing: border-box;
+    
+}
+
+#div2 .arc {
+    stroke-weight: 0.1;
+    fill: #f0a417;
+}
+
+#div2 .arc2 {
+    stroke-weight: 0.1;
+    fill: #b00d08;
+}
+
+#div3 .arc {
+    stroke-weight: 0.1;
+    fill: #1d871b;
+}
+
+
+.selectedRadial {
+    border-radius: 3px;
+    background: #f4f4f4;
+    color: #000;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.4);
+    -moz-box-shadow: 0 1px 5px rgba(0,0,0,0.4);
+    border: 1px solid rgba(200,200,200,0.85);
+}
+
+.radial {
+    border-radius: 3px;
+    background: #FFFFFF;
+    color: #000;
+
+}
+
+
+.background {
+    fill: #FFFFFF;
+    fill-opacity: 0.01;
+}
+
+.component {
+    fill: #e1e1e1;
+}
+
+.component .label {
+    font-family: Myriad, "Helvetic Neue", Helvetica, Arial;
+    text-anchor: middle;
+    fill: #446CB3;
+}
+
+.arc {
+    stroke-weight:0.1;
+    fill: #4e8fff;
+}
+
+
+.arc2 {
+    stroke-weight:0.1;
+    fill: #3660b0;
+}
+
+
+.label {
+    font-family:  Myriad, "Helvetic Neue", Helvetica, Arial;
+    text-anchor: middle;
+}
+
+.radial-svg {
+    display: block;
+    margin: 0 auto;
+}

@@ -1,0 +1,27 @@
+{"name":"bubble", "children": [
+{"name":"Life Span",
+"children":[
+  {"name":"1000 hours"},
+  {"name":"8000 hours"},
+  {"name":"25000 hours"}
+]},
+{"name": "Operating Cost",
+"children":[
+  {"name":"~$11/Year"},
+  {"name":"~$2.5/Year"},
+  {"name":"~$1.2/Year"}
+]},
+{"name":"Efficiency",
+"children":[
+  {"name":"15 Lumens/W"},
+  {"name":"60 Lumens/W"},
+  {"name":"90 Lumens/W"}
+]},
+{"name":"New Bulb Cost",
+"children":[
+{"name":"~$1 (60W)"},
+{"name":"~$3 (15W)"},
+{"name":"~$8 (10W)"}
+]}
+]}
+

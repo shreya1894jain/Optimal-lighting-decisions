@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<link rel="shortcut icon" id="logo" href="css/images/logo.png" style="height: auto;width: auto">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<link rel="stylesheet" href="css/ui.slider.extras.css">
+<link rel="stylesheet" href="css/jquery-ui-1.7.1.custom.css">
+<link rel="stylesheet" type="text/css" href="css/bubblechart.css">
+<link rel="stylesheet" type="text/css" href="css/introcss.css">
+
+<head>
+    <title>Optimum Lighting Decisions</title>
+</head>
+<body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script src="scripts/d3.min.js"></script>
+<script src="scripts/underscore-min.js"></script>
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="scripts/selectToUISlider.jQuery.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/TweenMax.min.js"></script>
+
+<p style="text-align: center; font-size: 20px">
+    Explorable Explanation: Optimal Lighting Decisions 
+    <p style="text-align: center; font-size: 15px;"> Enabling smart and efficient decisions to light up houses</p>
+</p>
+
+<div id="vizcontent1" class="center">
+<div style="margin: 10px; height: 460px">
+<p class="headers">Setting Context: How is electricity used in U.S. homes?</p>
+    The adjacent visualization represents the estimated U.S residential electricity consumption as of December 2014, via, <a href="#" onclick="window.open('https://www.eia.gov/tools/faqs/faq.cfm?id=96&t=3','_blank')">US Energy Information Administration</a>. Hovering over the donut allows you to view the split by end use; and we have represented the electricity consumed in lighting in red because that is the most interesting feature to the scope of this explorable explanation.
+
+    <br><br>
+    <p class="headers">Motivation of this explorable explanation </p>
+    The US Department of Energy has been <a href="#" onclick="window.open('http://energy.gov/energysaver/led-lighting','_blank')">recommending to phase out inefficient lighting products</a> and there is no interactive platform or existing solution that nails this message. This explorable explanation aims at allowing user to make choices to light their homes: they will have the opportunity to weigh the performance of their current lighting setup to understand if they are getting enough light in a given room and also compare how different lighting products would work in different scenarios. 
+
+    <br><br>This solution is for existing homes that already have fixtures (we are not giving hard recommendations for placement of the bulbs but just a visual representation) and for new homes that have the opportunity to rewire things to have the best setup right from word go!
+    <br><br>
+    <div id="lighting-stats" style="margin-top: 10px; margin-left: 0px; margin-right: 10px; margin-bottom: 10px;">
+        <img src="css/images/lighting-stats.png" width="70%" height="0%">
+        <img src="css/images/bulb-rec1.png" width="13%" height="13%">
+    </div>
+    
+</div>
+
+</div>
+<br><br><label class="headers">Estimated U.S. residential electricity consumption by end use, 2014</label>
+<div id="chart" style="margin:20px"></div>
+<script src="scripts/donutchart.js"></script>
+
+<br>
+<br>
+
+<!-- <div id="vizcontainer2" style="width: 1000px;"> -->
+
+
+    <div id="vizcontent2" class="center" style="width: 930px; height:470px; margin-left: 50px; margin-top: 30px" >
+    <div style="margin: 10px">
+    <br>
+        <p class="headers">Types of lighting fixtures and their comparison</p>
+        There are many choices available in the lighting industry and the technology is advancing by the day. Let's walk you through  the most prominent alternatives (Incadescent, CFLs and LEDs) and stack their performance against each other. To set perspective, we compare these bulbs based on the 4 critical parameters:
+        <ol>
+        <li>Average lifespan (How long do these bulbs last on average before you have to replace them?)</li>
+        <li>Average cost of operating (average per bulb $ cost to operate over one year)</li>
+        <li>Average Efficiency in Lumens (How much light does the bulb emit per watt?)</li>
+        <li>Average Purchasing Cost (average base cost of each equivalent option in $)</li>
+        </ol><br>
+        
+        <p class="headers"> Measuring Light Output: Lumen Methodology of Lighting Design </p>
+        A lumen is a measurement of light, just like watts, which measure the power consumed by the bulb. The brightness of every bulb varies and the amount can be quantified by the lumens value. The higher the lumen rating, the greater the light output.
+        Every room has a different requirement of lighting to perform the tasks at hand. 
+        <br><br>
+        <p class="headers">Key Takeaways</p>
+        This comparision has been presented below using a dynamic bubble chart that highlights the attributes of each comparing option on hover. From the visualization we observe that incandescent bulbs are cheap upfront, but have a short lifespan and higher cost of operating in a year as compared to its counterparts. LEDs are most expensive, but last longer (much longer) with a low cost of operating. CFLs, sit midway between incandescent bulbs and LEDs.
+        <br><br>
+        In the last section, we will watch these salient features in action and help you make the best decision (that takes care of the optimal light you need for a given room and also the combination of these paramters)!
+    </div>
+    </div>
+    <div id="legend" style="float: left">
+        <img src="css/images/legend.png" style="width: 150px; height: auto; margin-top:85px; margin-left:50px; opacity: 0.7";>
+    </div>
+    <div id="mainBubble" style="margin-left: 200px; height: 300px">
+    </div>
+    <script src="scripts/bubblechart.js"></script>
+
+<!-- <p style="margin-left:340px; width: 800px; text-align: left; font-size: 14px;">&nbsp; &nbsp; <b>Optimum Lighting Decisions : </b> Enabling smart decision making to light up houses</p>
+    <b><p style=" margin-left:10px; height: 10px" id="roomselected"></p><b>
+ -->
+<div id="container" style="float: left; height: 980px; width: 400px; margin-left: 50px; font-weight: normal; background: #f9fef1; margin-right: 10px; text-align: justify; margin-top: 10px">
+<div style="margin: 10px;">
+<p class="headers">Striking the best combination</p>
+<p>
+    Arriving at the best decision to light a room is sometimes a tricky one (given the complex calculations that we have no clue about); we intend to simplify the process and convey this via intuitive visual encodings. These complex calculations to derive the number of bulbs required to optimally light a given setting (See formula to the right) involves more complex terminology and jargon: the average horizontal illumination at the working plane in Lux, Lamp lighting design lumens, the utilization factor, the maintenance factor and the area of working plane. This is based on the <a href="#" onclick="window.open('https://bseclass.files.wordpress.com/2014/01/2-basic-lighting-design.pdf','_blank')">lighting design white paper.</a>
+</p>
+    <p style="font-size: 15px;">What's the best for you?</p>
+    As you have learnt from the bulb camparision in the previous visualization, every bulb has its own features and in here we try to leverage the best propositions that each one brings to the table. For instance, purchasing an incandescent bulb might be cheaper upfront, but the cost of operating is high with poor lifespan causing you to change it faster. <br><br>
+    <p style="font-size: 15px;">Introducing User Preferences</p>
+    In our solution, we simplify the decision making by giving you 4 options:
+    <ol>
+        <li>Low Power Consumption (KWH)</li>
+        <li>Low Cost (Cost of purchasing + operating costs in a year) </li>
+        <li>Eco Friendly (Least emissions)</li>
+        <li>Custom Setting</li>
+    </ol>
+
+    Note: The cost is calculated based on the national average $0.12 per KWH of electricity via. <a href="#" onclick="window.open('https://www.eia.gov/electricity/monthly/update/end_use.cfm','_blank')">US Energy Information Administration as of December 2015</a>.<br><br>
+
+    The selection of the preferred choice would automatically give you the most effective choice that we think suits your needs the best. Making any changes to our recommendations will automatically switch you over to the custom setting mode. The lighting recommendation also take into account that each room has a different requirement for optimal lumens, for example, the kitchen needs the highest lumens to be perfect for the tasks that we perform in there and the bedroom needs less lumens comparatively. 
+    The performance is represented using radial progress dials for easy comparision based on the room selected (the default values in the text box are the national averages for that room -- which can be modified), the power of the bulbs in Watts can be changed using the slider (to match closest to the number of fixtures available in your home) and also the bulbs can be manually selected to see the results dynamically. 
+
+    <br><br>
+
+    We also show a visual map of the room with the bulbs placed just to help you have a picture in mind. But this not set in stone and we understand that rewiring your house may not be always possible.
+
+    <br><br>
+    By now, we hope we have helped you make up your mind. <br><a href="#" onclick="window.open('https://www.youtube.com/watch?v=k4V3Mo61fJM','_blank')">Lights will guide you home!</a>
+    </p>
+
+    </div>
+
+    <br>
+
+</div>
+
+<div id="container2"  style="margin: 30px;height: 590px; float: left; width: 650px;">
+<div ><img src="css/images/formulae.png" width="80%" height="80%"> <br></div>
+<div id = "calculation" style="float: left">
+ <div id = "user-preference" style="margin: 10px; width: 250px;">
+            <b> Preference: </b>
+            <label id="select_preference" style="font-weight: normal;">Custom Setting</label> <br><br>
+            <label title="Energy Efficient" class="energy1">
+                <input type="radio" name="pref" class="pref" value="Low Power Consumption" id = "pow_r" id = "preference" ><img src="css/images/power1.png" id="energy_p" style="height: 51px; width: 51px;">
+            </label>
+
+            <label title="Cost Efficient" class="cost1" >
+                <input type="radio" name="pref" class="pref" value="Cost Saving" id = "cost_r"><img src="css/images/cost.png" id="cost_p" style="height: 50px;width: 50px;">
+            </label>
+
+            <label title="Eco Friendly" class="environment1">
+                <input type="radio" name="pref" class="pref" value="Eco Friendly" id = "eco_r"><img src="css/images/environment.png" class="environment" id="environment_p" style="height: 50px;width: 50px;">
+            </label>
+            <label title="Custom" class="custom1">
+                <input type="radio" name="pref" class="pref" value="Custom Setting" id = "cus_r" checked><img src="css/images/custom.png" class="custom_s" id="custom_p" style="height: 50px;width: 50px;">
+            </label>
+    <br>
+    <br>
+    </div>
+    <div id="number_bulbs" style="height:375px; width: 350px; float: left;">
+        <div id = "bulbtype" style="margin: 10px">
+            <B>Bulb:</B>
+            <label id="bulb_type" style="font-weight: normal;">Incandescent</label><br><br>
+            <label title="Tungsten Bulb" class="incg1" >
+                <input type="radio" name="bulb" class="bulb" value="Incandescent" id = "inc_r" checked><img src="css/images/incg.png" id="incg" style="height: 50px;width: 50px;">
+            </label>
+
+            <label title="CFL Bulb" class="cflg1" >
+                <input type="radio" name="bulb" class="bulb" value="CFL" id = "cfl_r"><img src="css/images/cflg.png" id="cflg" style="height: 50px;width: 50px; ">
+            </label>
+
+            <label title="LED Bulb" class="ledg1">
+                <input type="radio" name="bulb" class="bulb" value="LED" id = "led_r"><img src="css/images/ledg.png" class="ledg" id="ledg" style="height: 50px;width: 50px;">
+            </label>
+    <br>
+    <br>
+    </div>
+    <div style="margin: 10px">
+        <label>Select Room:</label>
+        <select id = "roomtype" style="margin: 10px; width: 85px;">
+          <option value="bed">Bedroom</option>
+          <option value="dine">Dining</option>
+          <option value="kitchen">Kitchen</option>
+          <option value="live">Living</option>
+          <option value="bath">Bathroom</option>
+        </select>
+    </div>
+
+    <div id = "dimensions" style="margin: 10px; font-weight: normal;">
+        <b>Room dimensions in meters:</b><br> (default: Avg dimensions; max 7x7) <br><br>
+        <input type="number" class="numberbox" placeholder="Length" min="0.1" max="7" id="length" style=" width: 70px" oninput="if(value>7) this.value=7">
+        <input type="number" class="numberbox" placeholder="Breadth" min="0.1" max="7" id="breadth" style="margin-left: 5px; width: 70px" oninput="if(value>7) this.value=7">
+        <br>
+
+    </div>
+
+    <div id = "power" style="margin: 10px" >
+        <b>Power: </b><label id="bulb_power" style="font-weight: normal;"> </label><br><br>
+        <div id = "slider1" style="width: 200px;float: left; margin-right: 30px"></div>
+        <br>
+    </div>
+
+    <div id = "calculate" style="margin: 10px">
+      <p style="width: 250px; font-weight: normal;">^ Suggestion: Consider changing the dimensions of the room and power of the bulbs to match your current house wiring!</p><br>
+
+<div id = "selected_room" style="float: left; height:250px; width: 250px"> </div>
+</div>
+</div>
+</div>
+    <div id="val" style=" height:375px; width: 300px; float: left;">
+
+        <div id='outer' style="margin-top:10px; padding:5px; ">
+        <div id="main" style="width:600px; height:200px; margin: 0px auto; ">
+            <label style="opacity: 0.6;">Number of Bulbs</label><br><br><div id="div1" style="height: 160px;"></div>
+            <label style="opacity: 0.6;">Cost to Purchase Bulbs<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;(Avg $)</label><br><br><div id="div2" style="height: 160px;"></div>
+            <label style="opacity: 0.6;">Approx Operating <br>Cost per Year ($)</label><br><br><div id="div3" style="height: 160px;"></div>
+            <br><label id = "lifespan" style="font-size: 35px; opacity: 0.6; margin: 20px;">1,000</label><br><br><label id="BT" style="opacity: 0.6; margin-top: 10px">Average lifespan per bulb<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (hours)</label>
+        </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+<script src="scripts/main-script.js"></script>
+
+
+</body>
+</html>
